@@ -5,8 +5,9 @@ Luna Bot（小Luna）是一个运行在树莓派上的AI桌面拟人机器人，
 ## 功能特点
 
 - **唤醒与休眠逻辑**: 支持"Hi, Luna"和"小Luna"唤醒词，自动休眠或关键词休眠
-- **语音交互**: 使用Vosk进行离线中文语音识别，通过OpenAI GPT生成回复
-- **情绪表情**: 在LCD屏幕上显示对应情绪的表情动画，响应用户情感需求
+- **语音交互**: 支持Whisper和Vosk双引擎语音识别，支持中英文混合识别
+- **情绪表情**: 支持六种情绪表情（开心、伤心、生气、思考、困倦、害怕），响应用户情感需求
+- **长期记忆**: 记录用户偏好和对话历史，增强人格关联
 - **多平台支持**: 运行于树莓派5（主要平台）和macOS（测试模式）
 - **易于扩展**: 模块化设计，预留摄像头、舵机和Web控制接口
 
@@ -21,7 +22,8 @@ Luna Bot（小Luna）是一个运行在树莓派上的AI桌面拟人机器人，
 ## 软件依赖
 
 - Python 3.11+
-- Vosk（离线语音识别）
+- OpenAI Whisper（主要语音识别引擎）
+- Vosk（备用离线语音识别）
 - OpenAI API（GPT对话）
 - edge-tts（语音合成）
 - 其他依赖见requirements.txt
@@ -57,12 +59,14 @@ python main.py --test  # 测试模式（适用于macOS）
 luna-bot/
 ├── main.py               # 主程序入口
 ├── voice_input.py        # 麦克风监听 + Vosk 识别
+├── whisper_input.py      # Whisper 语音识别模块
 ├── chat_gpt.py           # 调用 GPT 接口
 ├── voice_output.py       # 播报模块（edge-tts）
 ├── screen_display.py     # 表情显示 + 动画播放
-├── emotion_detect.py     # 情绪关键词分析
+├── emotion_detect.py     # 情绪关键词分析（六种情绪）
 ├── config.py             # 所有配置项
 ├── memory.json           # 聊天记录本地存储
+├── memory_long.json      # 长期记忆与用户偏好存储
 ├── requirements.txt      # 项目依赖
 └── README.md             # 使用说明
 ```
