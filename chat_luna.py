@@ -5,7 +5,7 @@ from voice_input import transcribe_audio
 from voice_output import speak_text
 
 # 初始化 OpenAI 客户端（用你的 API 密钥）
-client = OpenAI(api_key="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")
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # 载入历史对话作为“记忆”
 if os.path.exists("memory.json"):
