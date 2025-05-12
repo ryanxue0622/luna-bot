@@ -1,0 +1,6 @@
+openai
+vosk
+sounddevice
+numpy
+requests
+edge-tts
