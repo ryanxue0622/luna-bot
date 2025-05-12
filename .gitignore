@@ -1,0 +1,4 @@
+__pycache__/
+*.pyc
+.env
+luna_output.mp3
