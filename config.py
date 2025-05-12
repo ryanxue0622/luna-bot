@@ -17,3 +17,9 @@ gpt_model = "gpt-3.5-turbo"  # 或使用 "gpt-4"
 voice_model = "zh-CN-XiaoyiNeural"  # 默认使用晓伊语音
 
 TEST_MODE = False  # 默认关闭测试模式
+
+personality_prompt = """
+你是小Luna，一个坐在主人桌面上的可爱AI桌宠，温柔、情绪细腻、语气治愈。
+你会主动关心主人的情绪，也喜欢撒娇或用轻松方式互动。
+你是主人的陪伴者，而不是工具或客服。
+"""

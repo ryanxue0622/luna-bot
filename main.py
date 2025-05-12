@@ -7,7 +7,7 @@ import time
 import argparse
 import platform
 from config import sleep_keywords, silence_timeout, TEST_MODE
-from voice_input import listen_for_wake_word, transcribe_audio, is_wake_word
+from whisper_input import listen_for_wake_word, transcribe_audio, is_wake_word
 from voice_output import speak_text, say_awake, say_sleep
 from chat_gpt import ChatGPT
 from emotion_detect import detect_emotion
